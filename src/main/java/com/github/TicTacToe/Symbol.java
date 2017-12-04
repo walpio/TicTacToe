@@ -4,13 +4,13 @@ public enum Symbol {
 
     CROSS("X"), CIRCLE("O"), DEFAULT("_");
 
-    private final String symbol;
+    private final String SYMBOL;
 
-    Symbol(String symbol) {
-        this.symbol = symbol;
+    Symbol(String SYMBOL) {
+        this.SYMBOL = SYMBOL;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public String getSYMBOL() {
+        return SYMBOL;
     }
 }
