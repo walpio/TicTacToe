@@ -9,14 +9,14 @@ public class GameBoard {
     public GameBoard(int HEIGHT, int WIDTH) {
         this.HEIGHT = HEIGHT;
         this.WIDTH = WIDTH;
-        FIELD = new Field[WIDTH][HEIGHT];
+        FIELDS = new Field[WIDTH][HEIGHT];
         initFields();
     }
 
     private void initFields() {
         for (int i = 0; i < WIDTH; i++) {
             for (int j = 0; j < HEIGHT; j++) {
-                FIELD[i][j] = new Field(new Coordinates(i, j));
+                FIELDS[i][j] = new Field(new Coordinates(i, j));
             }
         }
     }
