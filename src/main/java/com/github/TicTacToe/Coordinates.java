@@ -2,19 +2,19 @@ package com.github.TicTacToe;
 
 public class Coordinates {
 
-    private final byte X;
-    private final byte Y;
+    private final int X;
+    private final int Y;
 
-    public Coordinates(byte x, byte y) {
+    public Coordinates(int x, int y) {
         this.X = x;
         this.Y = y;
     }
 
-    public byte getX() {
+    public int getX() {
         return X;
     }
 
-    public byte getY() {
+    public int getY() {
         return Y;
     }
 }

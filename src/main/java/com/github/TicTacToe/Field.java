@@ -9,4 +9,8 @@ public class Field {
         this.COORDINATES = COORDINATES;
         this.symbol = symbol;
     }
+
+    public Field(Coordinates coordinates) {
+        this(coordinates, Symbol.DEFAULT);
+    }
 }
