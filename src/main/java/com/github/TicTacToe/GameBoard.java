@@ -4,7 +4,7 @@ public class GameBoard {
 
     private final int WIDTH;
     private final int HEIGHT;
-    private final Field[][] FIELD;
+    private final Field[][] FIELDS;
 
     public GameBoard(int HEIGHT, int WIDTH) {
         this.HEIGHT = HEIGHT;
@@ -19,5 +19,20 @@ public class GameBoard {
                 FIELD[i][j] = new Field(new Coordinates(i, j));
             }
         }
+    }
+
+    public void takeField(Coordinates coordinates, Symbol symbol) {
+        if (areCoordinatesVaild(coordinates.getX(), coordinates.getY())) {
+            Field field = FIELDS[coordinates.getX()][coordinates.getY()];
+            if (field.isTaken()) {
+                System.out.printf("The field %s is taken", coordinates.toString());
+            } else {
+                System.out.printf("Coordinates %s are invalid", coordinates);
+            }
+        }
+    }
+
+    private boolean areCoordinatesVaild(int X, int Y) {
+        return X >= 0 && X < WIDTH && Y >= 0 && Y < HEIGHT;
     }
 }

@@ -13,4 +13,8 @@ public class Field {
     public Field(Coordinates coordinates) {
         this(coordinates, Symbol.DEFAULT);
     }
+
+    public boolean isTaken() {
+        return !symbol.equals(Symbol.DEFAULT);
+    }
 }

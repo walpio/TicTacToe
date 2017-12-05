@@ -17,4 +17,9 @@ public class Coordinates {
     public int getY() {
         return Y;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%d, %d", X, Y);
+    }
 }
