@@ -14,7 +14,17 @@ public class Field {
         this(coordinates, Symbol.DEFAULT);
     }
 
+    public Symbol getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(Symbol symbol) {
+        this.symbol = symbol;
+    }
+
     public boolean isTaken() {
         return !symbol.equals(Symbol.DEFAULT);
     }
+
+
 }

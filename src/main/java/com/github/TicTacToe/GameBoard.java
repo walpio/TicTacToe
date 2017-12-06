@@ -1,5 +1,7 @@
 package com.github.TicTacToe;
 
+import java.util.Arrays;
+
 public class GameBoard {
 
     private final int WIDTH;
@@ -32,7 +34,31 @@ public class GameBoard {
         }
     }
 
+    public boolean isVictoryOrDraw() {
+        for (int i = 0; i < WIDTH; i++) {
+            for (int j = 0; j < HEIGHT; j++) {
+                if (FIELDS[i][j].equals(Symbol.DEFAULT)) {
+                    System.out.println(FIELDS[i][j]);
+                }
+            }
+        }
+        return false;
+    }
+
     private boolean areCoordinatesVaild(int X, int Y) {
         return X >= 0 && X < WIDTH && Y >= 0 && Y < HEIGHT;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder boardString = new StringBuilder();
+        for (int i = 0; i < WIDTH; i++) {
+            for (int j = 0; j < HEIGHT; j++) {
+                boardString.append(FIELDS[i][j].getSymbol().toString());
+                boardString.append(" ");
+            }
+            boardString.append("\n");
+        }
+        return boardString.toString();
     }
 }
