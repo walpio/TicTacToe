@@ -1,4 +1,4 @@
-package com.github.TicTacToe;
+package com.github.TicTacToe.CoreGame;
 
 public enum Symbol {
 
@@ -12,5 +12,10 @@ public enum Symbol {
 
     public String getSYMBOL() {
         return SYMBOL;
+    }
+
+    @Override
+    public String toString() {
+        return getSYMBOL();
     }
 }

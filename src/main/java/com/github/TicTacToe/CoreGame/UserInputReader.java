@@ -1,4 +1,4 @@
-package com.github.TicTacToe;
+package com.github.TicTacToe.CoreGame;
 
 import java.util.Scanner;
 

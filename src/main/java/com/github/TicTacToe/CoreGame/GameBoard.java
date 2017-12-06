@@ -1,6 +1,4 @@
-package com.github.TicTacToe;
-
-import java.util.Arrays;
+package com.github.TicTacToe.CoreGame;
 
 public class GameBoard {
 

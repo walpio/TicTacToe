@@ -1,4 +1,4 @@
-package com.github.TicTacToe;
+package com.github.TicTacToe.CoreGame;
 
 public class Game {
 
@@ -18,13 +18,22 @@ public class Game {
         initializePlayers();
 
         while (!board.isVictoryOrDraw()) {
-            System.out.printf("Player: %s, Move number: %d", activePlayer.toString(), moveCount);
+            System.out.printf("Player: %s, Move number: %d \n", activePlayer.toString(), moveCount);
             System.out.println(board.toString());
-            switchPlayers();
+            Coordinates move;
+            move = getCoordinatesFromPlayer();
+            board.takeField(move, activePlayer.getSYMBOL());
             moveCount++;
         }
         System.out.printf("Player %s wins!", activePlayer.toString());
-        
+
+    }
+
+    private Coordinates getCoordinatesFromPlayer() {
+        System.out.println("Type coordinates (X,Y):");
+        String coordinatesLine = userInputReader.readLine();
+        String[] coordinatesSplit = coordinatesLine.split(",");
+        return new Coordinates(Integer.parseInt(coordinatesSplit[0]), Integer.parseInt(coordinatesSplit[1]));
     }
 
     private void switchPlayers() {
@@ -41,7 +50,7 @@ public class Game {
         firstPlayer = new Player(firstPlayerName, Symbol.CIRCLE);
         System.out.println("Player X name:");
         String secondPlayerName = userInputReader.readLine();
-        firstPlayer = new Player(secondPlayerName, Symbol.CROSS);
+        secondPlayer = new Player(secondPlayerName, Symbol.CROSS);
 
         activePlayer = firstPlayer;
 
